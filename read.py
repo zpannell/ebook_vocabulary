@@ -23,7 +23,7 @@ def extract_text(fileIn):
     fullbook = f"{directory}/{title}.txt"
 
     # set chapter start keywords
-    keywords = ["Chapter", "Letter", "CAPÍTULO"]
+    keywords = ["Chapter", "Letter", "CAPÍTULO", "CAPITULO"]
 
     # read ebook file and store as book
     book = epub.read_epub(fileIn, {"ignore_ncx": True})
