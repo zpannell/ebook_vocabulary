@@ -7,12 +7,15 @@ from translate import translate
 
 
 def main():
+    # select epub file
     fileIn = tkinter.filedialog.askopenfilename()
     if not fileIn:
         sys.exit("No file selected")
-    title = Path(fileIn).stem
+    
+    # set path
     bookDir = f"{Path(fileIn).parents[0]}"
 
+    # extract, convert, and translate text
     extract_text(fileIn)
     convert_text(f"{bookDir}/text_files")
     translate(f"{bookDir}/word_frequency")
