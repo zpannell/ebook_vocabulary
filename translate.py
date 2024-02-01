@@ -13,12 +13,14 @@ def main():
     if not csvDir:
         sys.exit("No path selected")
 
+
+def translate(csvDir):
     for filename in os.listdir(csvDir):
         infilepath = os.path.join(csvDir, filename)
-        translate(infilepath)
+        translate_file(infilepath)
 
 
-def translate(fileIn):
+def translate_file(fileIn):
     title = Path(fileIn).stem
 
     # create dict with translations

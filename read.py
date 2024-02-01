@@ -12,10 +12,12 @@ def main():
     fileIn = tkinter.filedialog.askopenfilename()
     if not fileIn:
         sys.exit("No file selected")
-    title = Path(fileIn).stem
+    extract_text(fileIn)
 
+def extract_text(fileIn):
     # create directories to store outputs
-    directory = f"./text/{title}"
+    title = Path(fileIn).stem
+    directory = f"{Path(fileIn).parents[0]}/text_files"
     if not os.path.exists(directory):
         os.makedirs(directory)
     fullbook = f"{directory}/{title}.txt"
